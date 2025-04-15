@@ -1,0 +1,37 @@
+[project]
+name = "hello-python"
+version = "0.1.0"
+description = "poc on python project"
+authors = [
+    {name = "Siak Hooi",email = "siakhooi@gmail.com"}
+]
+keywords = [ "hello", "poc" ]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3.12"
+]
+
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[project.urls]
+homepage = "https://github.com/siakhooi/python-hello-python"
+repository = "https://github.com/siakhooi/python-hello-python"
+documentation = "https://github.com/siakhooi/python-hello-python/wiki"
+"Bug Tracker" = "https://github.com/siakhooi/python-hello-python/issues"
+
+[project.scripts]
+hello-python = 'hello_python.cli:run'
+
+
+[tool.poetry]
+packages = [{include = "hello_python", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

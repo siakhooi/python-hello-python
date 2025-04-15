@@ -1,2 +1,3 @@
-# python-hello-python
-poc to create python repo
+# hello python
+
+poc for python project
