@@ -9,6 +9,8 @@ install:
 	poetry install
 flake8:
 	poetry run flake8
+update:
+	poetry update
 test:
 	 poetry run pytest --junit-xml=cover/test-results.xml \
 	 --cov=hello_python \
