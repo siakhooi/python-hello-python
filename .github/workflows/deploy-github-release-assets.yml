@@ -14,8 +14,8 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: dist-3.13
-          path: ./
-      - run: ls -l
+          path: ./dist/
+      - run: ls -lr
       - uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.TOKEN_TO_UPLOAD_ASSETS }}
