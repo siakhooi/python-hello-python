@@ -26,19 +26,19 @@ jobs:
       - run: poetry run flake8
       - run: poetry build
       - run: |
-          poetry run pytest --junit-xml=coverage/${{ matrix.python-version }}/test-results.xml \
+          poetry run pytest --junit-xml=coverage/test-results.xml \
             --cov=hello_python \
             --cov-report term-missing  \
-            --cov-report xml:coverage/${{ matrix.python-version }}/coverage.xml \
-            --cov-report html:coverage/${{ matrix.python-version }}/coverage.html \
-            --cov-report lcov:coverage/${{ matrix.python-version }}/coverage.info
+            --cov-report xml:coverage/coverage.xml \
+            --cov-report html:coverage/coverage.html \
+            --cov-report lcov:coverage/coverage.info
       - uses: actions/upload-artifact@v4
         with:
           name: dist-${{ matrix.python-version }}
           path: ./dist/
       - uses: actions/upload-artifact@v4
         with:
-          name: coverage-report
+          name: coverage-report-${{ matrix.python-version }}
           path: ./coverage/
   sonarcloud:
     needs: build
