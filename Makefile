@@ -4,6 +4,7 @@ clean:
 run:
 	poetry run hello-python
 build:
+	scripts/set-version.sh
 	poetry build
 install:
 	poetry install
@@ -20,3 +21,9 @@ test:
 	 --cov-report lcov:coverage/coverage.info
 
 all: clean flake8 build install test run
+
+release:
+	scripts/release.sh
+
+commit:
+	scripts/git-commit.sh
