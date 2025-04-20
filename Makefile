@@ -1,6 +1,6 @@
 help:
 clean:
-	rm -rf dist target cover
+	rm -rf dist target coverage
 run:
 	poetry run hello-python
 build:
@@ -12,11 +12,11 @@ flake8:
 update:
 	poetry update
 test:
-	 poetry run pytest --junit-xml=cover/test-results.xml \
+	 poetry run pytest --junit-xml=coverage/test-results.xml \
 	 --cov=hello_python \
 	 --cov-report term-missing  \
-	 --cov-report xml:cover/coverage.xml \
-	 --cov-report html:cover/coverage.html \
-	 --cov-report lcov:cover/coverage.info
+	 --cov-report xml:coverage/coverage.xml \
+	 --cov-report html:coverage/coverage.html \
+	 --cov-report lcov:coverage/coverage.info
 
 all: clean flake8 build install test run
