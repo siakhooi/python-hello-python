@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/build.yaml
   release-assets:
     needs: build
     uses: ./.github/workflows/deploy-github-release-assets.yml
