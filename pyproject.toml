@@ -1,6 +1,6 @@
 [project]
 name = "hello-python-kqTOS2G"
-version = "0.1.0"
+version = "0.1.1"
 description = "poc on python project"
 authors = [
     {name = "Siak Hooi",email = "siakhooi@gmail.com"}
