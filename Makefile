@@ -20,10 +20,15 @@ test:
 	 --cov-report html:coverage/coverage.html \
 	 --cov-report lcov:coverage/coverage.info
 
-all: clean flake8 build install test run
+all: clean install flake8 build test run
 
 release:
 	scripts/release.sh
 
 commit:
 	scripts/git-commit.sh
+
+publish:
+	poetry config repositories.pypi https://test.pypi.org/legacy/
+	poetry config pypi-token.pypi '$$PYPI_TOKEN'
+	poetry publish --repository pypi
