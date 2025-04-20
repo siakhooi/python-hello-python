@@ -35,6 +35,7 @@ packages = [{include = "hello_python", from = "src"}]
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 pytest-cov = "^6.1.1"
+flake8 = "^7.2.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

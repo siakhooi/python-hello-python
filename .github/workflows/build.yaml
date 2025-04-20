@@ -23,6 +23,7 @@ jobs:
       - run: poetry --version
       - run: export PATH="/root/.local/bin:$PATH"
       - run: poetry install
+      - run: poetry flake8
       - run: poetry build
       - run: |
           poetry run pytest --junit-xml=cover/test-results.xml \

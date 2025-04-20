@@ -7,6 +7,8 @@ build:
 	poetry build
 install:
 	poetry install
+flake8:
+	poetry run flake8
 test:
 	 poetry run pytest --junit-xml=cover/test-results.xml \
 	 --cov=hello_python \
@@ -15,4 +17,4 @@ test:
 	 --cov-report html:cover/coverage.html \
 	 --cov-report lcov:cover/coverage.info
 
-all: clean build install test run
+all: clean flake8 build install test run
