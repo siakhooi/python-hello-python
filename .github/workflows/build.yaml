@@ -24,7 +24,13 @@ jobs:
       - run: export PATH="/root/.local/bin:$PATH"
       - run: poetry install
       - run: poetry build
-      - run: poetry run pytest
+      - run: |
+          poetry run pytest --junit-xml=cover/test-results.xml \
+            --cov=hello_python \
+            --cov-report term-missing  \
+            --cov-report xml:cover/coverage.xml \
+            --cov-report html:cover/coverage.html \
+            --cov-report lcov:cover/coverage.info
       - uses: actions/upload-artifact@v4
         with:
           name: dist-${{ matrix.python-version }}
